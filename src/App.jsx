@@ -11,6 +11,7 @@ import GlobalStyles from "./GlobalStyles";
 import AppLayout from "./ui/AppLayout";
 
 function App() {
+  console.log(import.meta.env.VITE_URL_KEY);
   return (
     <>
       <GlobalStyles />
