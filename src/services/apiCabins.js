@@ -1,5 +1,17 @@
 import supabase from "./supabase";
 
+export async function createCabins(newCabin) {
+  const { data, error } = await supabase
+    .from("cabins")
+    .insert([newCabin])
+    .select();
+
+  if (error) {
+    console.log(error);
+    throw new Error("Cabins could not be created");
+  }
+}
+
 export async function getCabins() {
   const { data, error } = await supabase.from("cabins").select("*");
 
